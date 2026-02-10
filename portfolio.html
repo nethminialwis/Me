@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#ec4899',
+                        dark: '#0f172a',
+                        'dark-lighter': '#1e293b',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
+            }
+            .text-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+            }
+        }
+        body {
+            @apply bg-dark text-white font-sans antialiased overflow-x-hidden;
+        }
+    </style>
+</head>
+
+<body class="relative">
+
+    <!-- Background Decoration -->
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 py-4 glass">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-gradient">MyPortfolio.</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                <a href="about.html" class="hover:text-primary transition-colors">About Me</a>
+                <a href="portfolio.html" class="text-primary font-medium">Portfolio</a>
+                <a href="contact.html"
+                    class="px-5 py-2 rounded-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-white font-medium">Contact
+                    Me</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute w-full bg-dark/95 backdrop-blur-xl border-b border-white/10 p-6 flex-col space-y-4">
+            <a href="index.html" class="hover:text-primary transition-colors block">Home</a>
+            <a href="about.html" class="hover:text-primary transition-colors block">About Me</a>
+            <a href="portfolio.html" class="text-primary font-medium block">Portfolio</a>
+            <a href="contact.html" class="hover:text-primary transition-colors block">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 relative z-10">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-center">My <span class="text-gradient">Projects</span>
+            </h1>
+            <p class="text-gray-400 text-center max-w-2xl mx-auto mb-16">A text selection of my recent work, showcasing
+                my skills in design and development.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project 1 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden glass border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/service-web.png" alt="Project 1"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-primary uppercase tracking-widest mb-2 block">Web
+                            Application</span>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">E-Commerce
+                            Platform</h3>
+                        <p class="text-gray-400 text-sm mb-4">A full-featured online store with cart functionality,
+                            payment integration, and a custom CMS.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">React</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Node.js</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Stripe</span>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center text-primary font-semibold text-sm hover:underline">View
+                            Project -></a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden glass border border-white/10 hover:border-secondary/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/service-mobile.png" alt="Project 2"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-secondary uppercase tracking-widest mb-2 block">Mobile
+                            Design</span>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-secondary transition-colors">Finance Tracker
+                            App</h3>
+                        <p class="text-gray-400 text-sm mb-4">A sleek mobile interface for tracking expenses and
+                            managing personal finances.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Figma</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">UI/UX</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Prototyping</span>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center text-secondary font-semibold text-sm hover:underline">View
+                            Case Study -></a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden glass border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/service-ui.png" alt="Project 3"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="text-xs font-bold text-purple-500 uppercase tracking-widest mb-2 block">Dashboard</span>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-purple-500 transition-colors">Analytics
+                            Dashboard</h3>
+                        <p class="text-gray-400 text-sm mb-4">A comprehensive data visualization dashboard for
+                            monitoring business metrics in real-time.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Vue.js</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">D3.js</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Tailwind</span>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center text-purple-500 font-semibold text-sm hover:underline">View
+                            Detail -></a>
+                    </div>
+                </div>
+
+                <!-- Project 4 (Placeholder Image Reuse) -->
+                <div
+                    class="group relative rounded-2xl overflow-hidden glass border border-white/10 hover:border-green-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-48 overflow-hidden">
+                        <img src="images/hero-bg.png" alt="Project 4"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-green-500 uppercase tracking-widest mb-2 block">Brand
+                            Identity</span>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-green-500 transition-colors">Tech Startup
+                            Brand</h3>
+                        <p class="text-gray-400 text-sm mb-4">Complete brand identity design including logo, style
+                            guide, and marketing collateral.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Branding</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Illustrator</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs text-white">Logo</span>
+                        </div>
+                        <a href="#"
+                            class="inline-flex items-center text-green-500 font-semibold text-sm hover:underline">View
+                            Project -></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-12 bg-black/20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-gradient mb-6">Let's work together!</h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2026 MyPortfolio. All rights reserved. Built with ❤️ and Tailwind CSS.
+            </p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
